@@ -1,0 +1,763 @@
+[gd_scene load_steps=14 format=1]
+
+[ext_resource path="res://editor.gd" type="Script" id=1]
+[ext_resource path="res://icons/icon_add.png" type="Texture" id=2]
+[ext_resource path="res://icons/icon_remove.png" type="Texture" id=3]
+[ext_resource path="res://icons/icon_grid.png" type="Texture" id=4]
+[ext_resource path="res://icons/icon_import_check.png" type="Texture" id=5]
+[ext_resource path="res://icons/icon_static_body_2d.png" type="Texture" id=6]
+[ext_resource path="res://icons/icon_light_occluder_2d.png" type="Texture" id=7]
+[ext_resource path="res://icons/icon_navigation_2d.png" type="Texture" id=8]
+[ext_resource path="res://samples/sample_a.png" type="Texture" id=9]
+[ext_resource path="res://icons/icon_import_from_scene.png" type="Texture" id=10]
+[ext_resource path="res://icons/icon_save.png" type="Texture" id=11]
+[ext_resource path="res://icons/icon_load.png" type="Texture" id=12]
+[ext_resource path="res://icons/icon_new.png" type="Texture" id=13]
+
+[node name="WindowDialog" type="WindowDialog"]
+
+margin/left = 60.0
+margin/top = 24.0
+margin/right = 964.0
+margin/bottom = 575.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = true
+window/title = "Tileset Editor"
+script/script = ExtResource( 1 )
+texture_list_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/list_textures")
+tool_layout_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_layout")
+tool_selection_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_selection")
+tool_collision_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_collision")
+tool_occluder_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_occluder")
+tool_navpoly_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_navpoly")
+layout_toolbox_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools")
+shape_toolbox_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools")
+shape_list_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/shape_list")
+save_path = NodePath("VBoxContainer/HBoxContainer 2/save")
+load_path = NodePath("VBoxContainer/HBoxContainer 2/load")
+new_path = NodePath("VBoxContainer/HBoxContainer 2/reset")
+export_path = NodePath("VBoxContainer/HBoxContainer 2/export")
+add_texture_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/add_texture")
+del_texture_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/del_texture")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 10.0
+margin/bottom = 10.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer"]
+
+margin/right = 884.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 3
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="texture_list_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+
+margin/right = 120.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/texture_list_container"]
+
+margin/right = 120.0
+margin/bottom = 13.0
+rect/min_size = Vector2( 120, 0 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Textures:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="list_textures" type="ItemList" parent="VBoxContainer/HBoxContainer/texture_list_container"]
+
+margin/top = 17.0
+margin/right = 120.0
+margin/bottom = 479.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/texture_list_container"]
+
+margin/top = 483.0
+margin/right = 120.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="add_texture" type="Button" parent="VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer"]
+
+margin/right = 28.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+icon = ExtResource( 2 )
+flat = false
+
+[node name="del_texture" type="Button" parent="VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer"]
+
+margin/left = 32.0
+margin/right = 60.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+icon = ExtResource( 3 )
+flat = false
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/del_texture"]
+
+margin/right = 40.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/HBoxContainer"]
+
+margin/left = 132.0
+margin/right = 884.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="central_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer"]
+
+margin/right = 540.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="toolbar" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container"]
+
+margin/right = 540.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="tool_layout" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
+
+margin/right = 70.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = true
+is_pressed = true
+text = "Layout"
+icon = ExtResource( 4 )
+flat = false
+
+[node name="tool_selection" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
+
+margin/left = 74.0
+margin/right = 158.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = true
+text = "Selection"
+icon = ExtResource( 5 )
+flat = false
+
+[node name="tool_collision" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
+
+margin/left = 162.0
+margin/right = 240.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = true
+text = "Collision"
+icon = ExtResource( 6 )
+flat = false
+
+[node name="tool_occluder" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
+
+margin/left = 244.0
+margin/right = 325.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = true
+text = "Occluder"
+icon = ExtResource( 7 )
+flat = false
+
+[node name="tool_navpoly" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
+
+margin/left = 329.0
+margin/right = 406.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = true
+text = "Navpoly"
+icon = ExtResource( 8 )
+flat = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container"]
+
+margin/top = 26.0
+margin/right = 540.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+scroll/horizontal = true
+scroll/vertical = true
+__meta__ = { "_edit_lock_":true, "_editor_collapsed":true }
+
+[node name="TextureFrame" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer"]
+
+visibility/behind_parent = true
+margin/right = 500.0
+margin/bottom = 400.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+texture = ExtResource( 9 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="overlay" type="Control" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="sidebar_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer"]
+
+margin/left = 552.0
+margin/right = 752.0
+margin/bottom = 505.0
+rect/min_size = Vector2( 200, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="layout_tools" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container"]
+
+margin/right = 200.0
+margin/bottom = 185.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="title" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools"]
+
+margin/right = 200.0
+margin/bottom = 16.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="icon" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/title"]
+
+margin/right = 16.0
+margin/bottom = 16.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/title"]
+
+margin/left = 20.0
+margin/top = 1.0
+margin/right = 60.0
+margin/bottom = 14.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Layout"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools"]
+
+margin/top = 20.0
+margin/right = 200.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools"]
+
+margin/top = 27.0
+margin/right = 200.0
+margin/bottom = 185.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+columns = 2
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 5.0
+margin/right = 50.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "X Offset:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="edit_offset" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/right = 200.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 32.0
+margin/right = 50.0
+margin/bottom = 45.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Y Offset:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="edit_offset1" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/top = 27.0
+margin/right = 200.0
+margin/bottom = 50.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label1" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 59.0
+margin/right = 50.0
+margin/bottom = 72.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Width:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LineEdit1" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/top = 54.0
+margin/right = 200.0
+margin/bottom = 77.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 64.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 86.0
+margin/right = 50.0
+margin/bottom = 99.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Height:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LineEdit2" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/top = 81.0
+margin/right = 200.0
+margin/bottom = 104.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 64.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 113.0
+margin/right = 50.0
+margin/bottom = 126.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "H Separ:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LineEdit3" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/top = 108.0
+margin/right = 200.0
+margin/bottom = 131.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/top = 140.0
+margin/right = 50.0
+margin/bottom = 153.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "V Separ:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LineEdit4" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+
+margin/left = 54.0
+margin/top = 135.0
+margin/right = 200.0
+margin/bottom = 158.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = true
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="selection_tools" type="Control" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container"]
+
+margin/top = 189.0
+margin/right = 200.0
+margin/bottom = 189.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="shape_tools" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container"]
+
+visibility/visible = false
+margin/top = 193.0
+margin/right = 200.0
+margin/bottom = 505.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+alignment = 0
+
+[node name="title" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/right = 200.0
+margin/bottom = 16.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="icon" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/title"]
+
+margin/right = 16.0
+margin/bottom = 16.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 6 )
+
+[node name="label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/title"]
+
+margin/left = 20.0
+margin/top = 1.0
+margin/right = 68.0
+margin/bottom = 14.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Collision"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 20.0
+margin/right = 200.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="shape_list" type="ItemList" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 27.0
+margin/right = 200.0
+margin/bottom = 286.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 290.0
+margin/right = 200.0
+margin/bottom = 312.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+__meta__ = { "_editor_collapsed":true }
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
+
+margin/right = 28.0
+margin/bottom = 22.0
+hint/tooltip = "Import from scene"
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+icon = ExtResource( 10 )
+flat = false
+
+[node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
+
+margin/left = 32.0
+margin/right = 60.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+icon = ExtResource( 3 )
+flat = false
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1/Button1"]
+
+margin/right = 40.0
+margin/bottom = 40.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+
+[node name="HBoxContainer 2" type="HBoxContainer" parent="VBoxContainer"]
+
+margin/top = 509.0
+margin/right = 884.0
+margin/bottom = 531.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_constants/separation = 15
+alignment = 1
+__meta__ = { "_edit_lock_":true }
+
+[node name="save" type="Button" parent="VBoxContainer/HBoxContainer 2"]
+
+margin/left = 303.0
+margin/right = 362.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Save"
+icon = ExtResource( 11 )
+flat = false
+
+[node name="load" type="Button" parent="VBoxContainer/HBoxContainer 2"]
+
+margin/left = 377.0
+margin/right = 435.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Load"
+icon = ExtResource( 12 )
+flat = false
+
+[node name="reset" type="Button" parent="VBoxContainer/HBoxContainer 2"]
+
+margin/left = 450.0
+margin/right = 515.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Reset"
+icon = ExtResource( 13 )
+flat = false
+
+[node name="export" type="Button" parent="VBoxContainer/HBoxContainer 2"]
+
+margin/left = 530.0
+margin/right = 580.0
+margin/bottom = 22.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+toggle_mode = false
+text = "Export"
+flat = false
+
+[node name="Sprite" type="Sprite" parent="."]
+
+
