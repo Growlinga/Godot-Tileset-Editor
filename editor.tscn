@@ -47,8 +47,8 @@ new_path = NodePath("VBoxContainer/HBoxContainer 2/reset")
 export_path = NodePath("VBoxContainer/HBoxContainer 2/export")
 add_texture_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/add_texture")
 del_texture_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/del_texture")
-add_shape_path = null
-del_shape_path = null
+add_shape_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1/add_shape")
+del_shape_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1/remove_shape")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
@@ -639,7 +639,7 @@ size_flags/vertical = 2
 
 margin/top = 27.0
 margin/right = 200.0
-margin/bottom = 27.0
+margin/bottom = 255.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -647,17 +647,16 @@ size_flags/vertical = 3
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
 
-margin/top = 31.0
+margin/top = 259.0
 margin/right = 200.0
-margin/bottom = 53.0
+margin/bottom = 281.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
+[node name="add_shape" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
 
 margin/right = 28.0
 margin/bottom = 22.0
@@ -670,7 +669,7 @@ toggle_mode = false
 icon = ExtResource( 8 )
 flat = false
 
-[node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
+[node name="remove_shape" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
 
 margin/left = 32.0
 margin/right = 60.0
@@ -682,49 +681,6 @@ size_flags/vertical = 2
 toggle_mode = false
 icon = ExtResource( 3 )
 flat = false
-
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1/Button1"]
-
-margin/right = 40.0
-margin/bottom = 40.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-
-[node name="HSeparator1" type="HSeparator" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
-
-margin/top = 57.0
-margin/right = 200.0
-margin/bottom = 60.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
-
-margin/top = 64.0
-margin/right = 200.0
-margin/bottom = 77.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-text = "Preview"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
-
-margin/top = 81.0
-margin/right = 200.0
-margin/bottom = 281.0
-rect/min_size = Vector2( 120, 200 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
 
 [node name="HBoxContainer 2" type="HBoxContainer" parent="VBoxContainer"]
 
