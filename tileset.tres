@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=1]
 
-[ext_resource path="res://tileset.gd" type="Script" id=1]
+[ext_resource path="res://addons/tileset_editor/tileset.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://samples/sample_a.png" type="Texture" id=3]
 [ext_resource path="res://samples/sample_b.png" type="Texture" id=4]

@@ -1,10 +1,12 @@
 
+tool
+
 extends WindowDialog
 
-const tileset_script = preload("tileset.gd")
-const icon_collider = preload("icons/icon_collision_shape_2d.png")
-const icon_occlusion = preload("icons/icon_light_occluder_2d.png")
-const icon_navpoly = preload("icons/icon_navigation_polygon_instance.png")
+var tileset_script = load("res://addons/tileset_editor/tileset.gd")
+var icon_collider = load("res://addons/tileset_editor/icons/icon_collision_shape_2d.png")
+var icon_occlusion = load("res://addons/tileset_editor/icons/icon_light_occluder_2d.png")
+var icon_navpoly = load("res://addons/tileset_editor/icons/icon_navigation_polygon_instance.png")
 
 # region export variables
 
@@ -96,6 +98,7 @@ var current_tex_id = -1
 var changing_texture = false
 onready var tileset = tileset_script.new()
 onready var texture_dialog = FileDialog.new()
+onready var shape_picker = load("res://addons/tileset_editor/shape_picker.tscn").instance()
 
 #region constructors
 
@@ -130,6 +133,7 @@ func _ready():
 	texture_dialog.add_filter("*.xtex")
 	texture_dialog.connect("file_selected",self,"_on_texture_added")
 	get_parent().add_child(texture_dialog)
+	get_parent().add_child(shape_picker)
 	texture_dialog.set_size(Vector2(700,500))
 	
 	texture_list.connect("item_selected",self,"_on_texture_selected")
@@ -206,6 +210,8 @@ func _on_texture_btn(wich):
 func _on_shape_btn(wich):
 	if wich == 0: # Add
 		print("TODO: Add shape")
+		hide()
+		shape_picker.import(current_mode)
 	if wich == 1:
 		print("TODO: Remove shape")
 

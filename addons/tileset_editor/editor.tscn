@@ -1,18 +1,18 @@
 [gd_scene load_steps=12 format=1]
 
-[ext_resource path="res://editor.gd" type="Script" id=1]
-[ext_resource path="res://icons/icon_add.png" type="Texture" id=2]
-[ext_resource path="res://icons/icon_remove.png" type="Texture" id=3]
-[ext_resource path="res://icons/icon_grid.png" type="Texture" id=4]
-[ext_resource path="res://icons/icon_static_body_2d.png" type="Texture" id=5]
-[ext_resource path="res://icons/icon_light_occluder_2d.png" type="Texture" id=6]
-[ext_resource path="res://icons/icon_navigation_2d.png" type="Texture" id=7]
-[ext_resource path="res://icons/icon_import_from_scene.png" type="Texture" id=8]
-[ext_resource path="res://icons/icon_save.png" type="Texture" id=9]
-[ext_resource path="res://icons/icon_load.png" type="Texture" id=10]
-[ext_resource path="res://icons/icon_new.png" type="Texture" id=11]
+[ext_resource path="res://addons/tileset_editor/editor.gd" type="Script" id=1]
+[ext_resource path="res://addons/tileset_editor/icons/icon_add.png" type="Texture" id=2]
+[ext_resource path="res://addons/tileset_editor/icons/icon_remove.png" type="Texture" id=3]
+[ext_resource path="res://addons/tileset_editor/icons/icon_grid.png" type="Texture" id=4]
+[ext_resource path="res://addons/tileset_editor/icons/icon_static_body_2d.png" type="Texture" id=5]
+[ext_resource path="res://addons/tileset_editor/icons/icon_light_occluder_2d.png" type="Texture" id=6]
+[ext_resource path="res://addons/tileset_editor/icons/icon_navigation_2d.png" type="Texture" id=7]
+[ext_resource path="res://addons/tileset_editor/icons/icon_import_from_scene.png" type="Texture" id=8]
+[ext_resource path="res://addons/tileset_editor/icons/icon_save.png" type="Texture" id=9]
+[ext_resource path="res://addons/tileset_editor/icons/icon_load.png" type="Texture" id=10]
+[ext_resource path="res://addons/tileset_editor/icons/icon_new.png" type="Texture" id=11]
 
-[node name="WindowDialog" type="WindowDialog"]
+[node name="editor" type="WindowDialog"]
 
 margin/left = 60.0
 margin/top = 24.0
@@ -68,7 +68,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer"]
 
 margin/right = 884.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -80,13 +80,12 @@ split/dragger_visibility = 0
 [node name="texture_list_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 
 margin/right = 120.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/texture_list_container"]
 
@@ -105,7 +104,7 @@ max_lines_visible = -1
 
 margin/top = 17.0
 margin/right = 120.0
-margin/bottom = 478.0
+margin/bottom = 468.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -113,9 +112,9 @@ size_flags/vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/texture_list_container"]
 
-margin/top = 482.0
+margin/top = 472.0
 margin/right = 120.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -147,20 +146,11 @@ toggle_mode = false
 icon = ExtResource( 3 )
 flat = false
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/texture_list_container/HBoxContainer/del_texture"]
-
-margin/right = 40.0
-margin/bottom = 40.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/HBoxContainer"]
 
 margin/left = 132.0
 margin/right = 884.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -168,11 +158,12 @@ size_flags/vertical = 2
 split/offset = 0
 split/collapsed = false
 split/dragger_visibility = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="central_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer"]
 
 margin/right = 540.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -249,7 +240,7 @@ flat = false
 
 margin/top = 26.0
 margin/right = 540.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -280,7 +271,7 @@ size_flags/vertical = 3
 
 margin/left = 552.0
 margin/right = 752.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 rect/min_size = Vector2( 200, 0 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -584,7 +575,7 @@ size_flags/vertical = 2
 
 margin/top = 223.0
 margin/right = 200.0
-margin/bottom = 504.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -639,7 +630,7 @@ size_flags/vertical = 2
 
 margin/top = 27.0
 margin/right = 200.0
-margin/bottom = 255.0
+margin/bottom = 245.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -647,9 +638,9 @@ size_flags/vertical = 3
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
 
-margin/top = 259.0
+margin/top = 249.0
 margin/right = 200.0
-margin/bottom = 281.0
+margin/bottom = 271.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -684,9 +675,9 @@ flat = false
 
 [node name="HBoxContainer 2" type="HBoxContainer" parent="VBoxContainer"]
 
-margin/top = 508.0
+margin/top = 498.0
 margin/right = 884.0
-margin/bottom = 530.0
+margin/bottom = 520.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2

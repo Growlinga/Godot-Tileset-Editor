@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://addons/tileset_editor/shape_picker.gd" type="Script" id=1]
+
+
+[node name="shape_picker" type="WindowDialog"]
+
+margin/right = 685.0
+margin/bottom = 300.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+popup/exclusive = false
+window/title = "Select shape"
+script/script = ExtResource( 1 )
+name_path = NodePath("VBoxContainer/HBoxContainer/name_edit")
+scene_tree_path = NodePath("VBoxContainer/scene_tree")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 10.0
+margin/bottom = 38.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+
+margin/right = 665.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+alignment = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+
+margin/top = 5.0
+margin/right = 37.0
+margin/bottom = 18.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Name:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="name_edit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+
+margin/left = 41.0
+margin/right = 665.0
+margin/bottom = 23.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="scene_tree" type="Tree" parent="VBoxContainer"]
+
+margin/top = 27.0
+margin/right = 665.0
+margin/bottom = 252.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+
+
