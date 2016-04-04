@@ -4,12 +4,12 @@ extends Resource
 
 class TextureProperties:
 	var texture = null
-	var x_off = 0
-	var y_off = 0
-	var w = 64
-	var h = 64
-	var x_sep = 0
-	var y_sep = 0
+	var x_off = 0.0
+	var y_off = 0.0
+	var w = 64.0
+	var h = 64.0
+	var x_sep = 0.0
+	var y_sep = 0.0
 	var collisions_cache = []
 	var occluder_cache = []
 	var navpoly_cache = []
@@ -28,45 +28,64 @@ func _get_property_list():
 	
 	for i in range(tileset_data.size()):
 		var basename = "texture_"+str(i)+"/"
-		
+		d = {}
 		d["name"] = basename+"texture"
 		d["type"] = TYPE_OBJECT
 		d["hint"] = "Texture"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"x_off"
 		d["type"] = TYPE_INT
-		d["hint"] = "0,99999,1"
+		d["hint"] = "0,65535,1"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"w"
-		d["hint"] = "1,99999,1"
+		d["type"] = TYPE_INT
+		d["hint"] = "1,65535,1"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"h"
+		d["type"] = TYPE_INT
+		d["hint"] = "1,65535,1"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"x_sep"
-		d["hint"] = "0,99999,1"
+		d["type"] = TYPE_INT
+		d["hint"] = "0,65535,1"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"y_sep"
-		d["hint"] = "0,99999,1"
+		d["type"] = TYPE_INT
+		d["hint"] = "0,65535,1"
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"collisions_cache"
 		d["type"] = TYPE_ARRAY
 		d["hint"] = ""
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"occluder_cache"
+		d["type"] = TYPE_ARRAY
+		d["hint"] = ""
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"navpoly_cache"
+		d["type"] = TYPE_ARRAY
+		d["hint"] = ""
 		properties.push_back(d)
 		
+		d = {}
 		d["name"] = basename+"data"
 		d["type"] = TYPE_DICTIONARY
+		d["hint"] = ""
 		properties.push_back(d)
 	
 	return properties
@@ -104,7 +123,13 @@ func _get(property):
 
 func _set(property, value):
 	if property=="texture_count":
-		tileset_data.resize(value)
+		if tileset_data.size() < value:
+			print("curent_count: "+str(tileset_data.size()))
+			for i in range(tileset_data.size(),value):
+				tileset_data.push_back(TextureProperties.new())
+			print("curent_count: "+str(tileset_data.size()))
+		else:
+			tileset_data.resize(value)
 	elif property.begins_with("texture_"):
 		var id = int(property.split("/")[0].split("_")[1])
 		var data = tileset_data[id]

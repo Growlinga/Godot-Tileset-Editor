@@ -1,9 +1,31 @@
-[gd_resource type="Resource" load_steps=2 format=1]
+[gd_resource type="Resource" load_steps=4 format=1]
 
 [ext_resource path="res://tileset.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://samples/sample_a.png" type="Texture" id=3]
 
 [resource]
 
 script/script = ExtResource( 1 )
-texture_count = 0
+texture_count = 2
+texture_0/texture = ExtResource( 2 )
+texture_0/x_off = 0.0
+texture_0/w = 16.0
+texture_0/h = 16.0
+texture_0/x_sep = 0.0
+texture_0/y_sep = 0.0
+texture_0/collisions_cache = [  ]
+texture_0/occluder_cache = [  ]
+texture_0/navpoly_cache = [  ]
+texture_0/data = {  }
+texture_1/texture = ExtResource( 3 )
+texture_1/x_off = 1.0
+texture_1/w = 32.0
+texture_1/h = 32.0
+texture_1/x_sep = 1.0
+texture_1/y_sep = 1.0
+texture_1/collisions_cache = [  ]
+texture_1/occluder_cache = [  ]
+texture_1/navpoly_cache = [  ]
+texture_1/data = {  }
 

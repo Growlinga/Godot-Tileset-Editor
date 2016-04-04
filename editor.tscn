@@ -1,41 +1,45 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://editor.gd" type="Script" id=1]
 [ext_resource path="res://icons/icon_add.png" type="Texture" id=2]
 [ext_resource path="res://icons/icon_remove.png" type="Texture" id=3]
 [ext_resource path="res://icons/icon_grid.png" type="Texture" id=4]
-[ext_resource path="res://icons/icon_import_check.png" type="Texture" id=5]
-[ext_resource path="res://icons/icon_static_body_2d.png" type="Texture" id=6]
-[ext_resource path="res://icons/icon_light_occluder_2d.png" type="Texture" id=7]
-[ext_resource path="res://icons/icon_navigation_2d.png" type="Texture" id=8]
-[ext_resource path="res://samples/sample_a.png" type="Texture" id=9]
-[ext_resource path="res://icons/icon_import_from_scene.png" type="Texture" id=10]
-[ext_resource path="res://icons/icon_save.png" type="Texture" id=11]
-[ext_resource path="res://icons/icon_load.png" type="Texture" id=12]
-[ext_resource path="res://icons/icon_new.png" type="Texture" id=13]
+[ext_resource path="res://icons/icon_static_body_2d.png" type="Texture" id=5]
+[ext_resource path="res://icons/icon_light_occluder_2d.png" type="Texture" id=6]
+[ext_resource path="res://icons/icon_navigation_2d.png" type="Texture" id=7]
+[ext_resource path="res://icons/icon_import_from_scene.png" type="Texture" id=8]
+[ext_resource path="res://icons/icon_save.png" type="Texture" id=9]
+[ext_resource path="res://icons/icon_load.png" type="Texture" id=10]
+[ext_resource path="res://icons/icon_new.png" type="Texture" id=11]
 
 [node name="WindowDialog" type="WindowDialog"]
 
 margin/left = 60.0
 margin/top = 24.0
 margin/right = 964.0
-margin/bottom = 575.0
+margin/bottom = 564.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-popup/exclusive = true
+popup/exclusive = false
 window/title = "Tileset Editor"
 script/script = ExtResource( 1 )
 texture_list_path = NodePath("VBoxContainer/HBoxContainer/texture_list_container/list_textures")
+texture_view_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer/texture_view")
 tool_layout_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_layout")
-tool_selection_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_selection")
 tool_collision_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_collision")
 tool_occluder_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_occluder")
 tool_navpoly_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar/tool_navpoly")
 layout_toolbox_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools")
 shape_toolbox_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools")
 shape_list_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/shape_list")
+layout_x_off_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/x_off")
+layout_y_off_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/y_off")
+layout_w_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/width")
+layout_h_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/height")
+layout_x_sep_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/x_sep")
+layout_y_Sep_path = NodePath("VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer/y_sep")
 save_path = NodePath("VBoxContainer/HBoxContainer 2/save")
 load_path = NodePath("VBoxContainer/HBoxContainer 2/load")
 new_path = NodePath("VBoxContainer/HBoxContainer 2/reset")
@@ -61,7 +65,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="HBoxContainer" type="HSplitContainer" parent="VBoxContainer"]
 
 margin/right = 884.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 3
@@ -73,7 +77,7 @@ split/dragger_visibility = 0
 [node name="texture_list_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 
 margin/right = 120.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -98,7 +102,7 @@ max_lines_visible = -1
 
 margin/top = 17.0
 margin/right = 120.0
-margin/bottom = 479.0
+margin/bottom = 468.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -106,9 +110,9 @@ size_flags/vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/texture_list_container"]
 
-margin/top = 483.0
+margin/top = 472.0
 margin/right = 120.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -153,7 +157,7 @@ size_flags/vertical = 2
 
 margin/left = 132.0
 margin/right = 884.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -165,13 +169,12 @@ split/dragger_visibility = 0
 [node name="central_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer"]
 
 margin/right = 540.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="toolbar" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container"]
 
@@ -182,7 +185,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
-__meta__ = { "_editor_collapsed":true }
 
 [node name="tool_layout" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
 
@@ -198,24 +200,10 @@ text = "Layout"
 icon = ExtResource( 4 )
 flat = false
 
-[node name="tool_selection" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
-
-margin/left = 74.0
-margin/right = 158.0
-margin/bottom = 22.0
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-toggle_mode = true
-text = "Selection"
-icon = ExtResource( 5 )
-flat = false
-
 [node name="tool_collision" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
 
-margin/left = 162.0
-margin/right = 240.0
+margin/left = 74.0
+margin/right = 152.0
 margin/bottom = 22.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -223,13 +211,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = true
 text = "Collision"
-icon = ExtResource( 6 )
+icon = ExtResource( 5 )
 flat = false
 
 [node name="tool_occluder" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
 
-margin/left = 244.0
-margin/right = 325.0
+margin/left = 156.0
+margin/right = 237.0
 margin/bottom = 22.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -237,13 +225,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = true
 text = "Occluder"
-icon = ExtResource( 7 )
+icon = ExtResource( 6 )
 flat = false
 
 [node name="tool_navpoly" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/toolbar"]
 
-margin/left = 329.0
-margin/right = 406.0
+margin/left = 241.0
+margin/right = 318.0
 margin/bottom = 22.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -251,32 +239,29 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = true
 text = "Navpoly"
-icon = ExtResource( 8 )
+icon = ExtResource( 7 )
 flat = false
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container"]
 
 margin/top = 26.0
 margin/right = 540.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 scroll/horizontal = true
 scroll/vertical = true
-__meta__ = { "_edit_lock_":true, "_editor_collapsed":true }
+__meta__ = { "_edit_lock_":true }
 
-[node name="TextureFrame" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer"]
+[node name="texture_view" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer"]
 
 visibility/behind_parent = true
-margin/right = 500.0
-margin/bottom = 400.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="overlay" type="Control" parent="VBoxContainer/HBoxContainer/HSplitContainer/central_container/ScrollContainer"]
@@ -290,7 +275,7 @@ size_flags/vertical = 2
 
 margin/left = 552.0
 margin/right = 752.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 rect/min_size = Vector2( 200, 0 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -317,6 +302,7 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 alignment = 0
+__meta__ = { "_editor_collapsed":true }
 
 [node name="icon" type="TextureFrame" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/title"]
 
@@ -362,7 +348,6 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 columns = 2
-__meta__ = { "_editor_collapsed":true }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
@@ -377,7 +362,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="edit_offset" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="x_off" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/right = 200.0
@@ -387,7 +372,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 0.0
@@ -410,7 +395,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="edit_offset1" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="y_off" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/top = 27.0
@@ -421,7 +406,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 0.0
@@ -444,7 +429,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LineEdit1" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="width" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/top = 54.0
@@ -455,7 +440,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 64.0
@@ -478,7 +463,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LineEdit2" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="height" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/top = 81.0
@@ -489,7 +474,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 64.0
@@ -512,7 +497,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LineEdit3" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="x_sep" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/top = 108.0
@@ -523,7 +508,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 0.0
@@ -546,7 +531,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LineEdit4" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
+[node name="y_sep" type="SpinBox" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/layout_tools/GridContainer"]
 
 margin/left = 54.0
 margin/top = 135.0
@@ -557,7 +542,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 range/min = 0.0
-range/max = 100.0
+range/max = 65535.0
 range/step = 1.0
 range/page = 0.0
 range/value = 0.0
@@ -579,10 +564,9 @@ size_flags/vertical = 2
 
 [node name="shape_tools" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container"]
 
-visibility/visible = false
 margin/top = 193.0
 margin/right = 200.0
-margin/bottom = 505.0
+margin/bottom = 494.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -607,7 +591,7 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/title"]
 
@@ -637,7 +621,7 @@ size_flags/vertical = 2
 
 margin/top = 27.0
 margin/right = 200.0
-margin/bottom = 286.0
+margin/bottom = 47.0
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -645,9 +629,9 @@ size_flags/vertical = 3
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
 
-margin/top = 290.0
+margin/top = 51.0
 margin/right = 200.0
-margin/bottom = 312.0
+margin/bottom = 73.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -665,7 +649,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
-icon = ExtResource( 10 )
+icon = ExtResource( 8 )
 flat = false
 
 [node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools/HBoxContainer1"]
@@ -690,11 +674,45 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 
+[node name="HSeparator1" type="HSeparator" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 77.0
+margin/right = 200.0
+margin/bottom = 80.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 84.0
+margin/right = 200.0
+margin/bottom = 97.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+text = "Preview"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HSplitContainer/sidebar_container/shape_tools"]
+
+margin/top = 101.0
+margin/right = 200.0
+margin/bottom = 301.0
+rect/min_size = Vector2( 120, 200 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
 [node name="HBoxContainer 2" type="HBoxContainer" parent="VBoxContainer"]
 
-margin/top = 509.0
+margin/top = 498.0
 margin/right = 884.0
-margin/bottom = 531.0
+margin/bottom = 520.0
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -714,7 +732,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
 text = "Save"
-icon = ExtResource( 11 )
+icon = ExtResource( 9 )
 flat = false
 
 [node name="load" type="Button" parent="VBoxContainer/HBoxContainer 2"]
@@ -728,7 +746,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
 text = "Load"
-icon = ExtResource( 12 )
+icon = ExtResource( 10 )
 flat = false
 
 [node name="reset" type="Button" parent="VBoxContainer/HBoxContainer 2"]
@@ -742,7 +760,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 toggle_mode = false
 text = "Reset"
-icon = ExtResource( 13 )
+icon = ExtResource( 11 )
 flat = false
 
 [node name="export" type="Button" parent="VBoxContainer/HBoxContainer 2"]
@@ -757,7 +775,5 @@ size_flags/vertical = 2
 toggle_mode = false
 text = "Export"
 flat = false
-
-[node name="Sprite" type="Sprite" parent="."]
 
 
