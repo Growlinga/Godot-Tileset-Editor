@@ -41,6 +41,12 @@ func _get_property_list():
 		properties.push_back(d)
 		
 		d = {}
+		d["name"] = basename+"y_off"
+		d["type"] = TYPE_INT
+		d["hint"] = "0,65535,1"
+		properties.push_back(d)
+		
+		d = {}
 		d["name"] = basename+"w"
 		d["type"] = TYPE_INT
 		d["hint"] = "1,65535,1"

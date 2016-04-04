@@ -1,15 +1,17 @@
-[gd_resource type="Resource" load_steps=4 format=1]
+[gd_resource type="Resource" load_steps=5 format=1]
 
 [ext_resource path="res://tileset.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://samples/sample_a.png" type="Texture" id=3]
+[ext_resource path="res://samples/sample_b.png" type="Texture" id=4]
 
 [resource]
 
 script/script = ExtResource( 1 )
-texture_count = 2
+texture_count = 3
 texture_0/texture = ExtResource( 2 )
 texture_0/x_off = 0.0
+texture_0/y_off = 0.0
 texture_0/w = 16.0
 texture_0/h = 16.0
 texture_0/x_sep = 0.0
@@ -17,9 +19,10 @@ texture_0/y_sep = 0.0
 texture_0/collisions_cache = [  ]
 texture_0/occluder_cache = [  ]
 texture_0/navpoly_cache = [  ]
-texture_0/data = {  }
+texture_0/data = { Vector2( 0, 0 ):{ "export":false }, Vector2( 0, 1 ):{ "export":true }, Vector2( 0, 2 ):{ "export":false }, Vector2( 0, 3 ):{ "export":true }, Vector2( 1, 0 ):{ "export":true }, Vector2( 1, 2 ):{ "export":true }, Vector2( 1, 3 ):{ "export":false }, Vector2( 2, 0 ):{ "export":false }, Vector2( 2, 1 ):{ "export":true }, Vector2( 2, 2 ):{ "export":false }, Vector2( 2, 3 ):{ "export":true }, Vector2( 3, 0 ):{ "export":true }, Vector2( 3, 1 ):{ "export":false }, Vector2( 3, 2 ):{ "export":true }, Vector2( 3, 3 ):{ "export":false } }
 texture_1/texture = ExtResource( 3 )
-texture_1/x_off = 1.0
+texture_1/x_off = 0.0
+texture_1/y_off = 0.0
 texture_1/w = 32.0
 texture_1/h = 32.0
 texture_1/x_sep = 1.0
@@ -27,5 +30,16 @@ texture_1/y_sep = 1.0
 texture_1/collisions_cache = [  ]
 texture_1/occluder_cache = [  ]
 texture_1/navpoly_cache = [  ]
-texture_1/data = {  }
+texture_1/data = { Vector2( 0, 0 ):{ "export":true }, Vector2( 0, 1 ):{ "export":true }, Vector2( 0, 2 ):{ "export":true }, Vector2( 0, 3 ):{ "export":true }, Vector2( 0, 4 ):{ "export":true }, Vector2( 0, 5 ):{ "export":true }, Vector2( 0, 6 ):{ "export":true }, Vector2( 0, 7 ):{ "export":true }, Vector2( 0, 8 ):{ "export":true }, Vector2( 0, 9 ):{ "export":true }, Vector2( 1, 0 ):{ "export":true }, Vector2( 1, 1 ):{ "export":true }, Vector2( 1, 2 ):{ "export":true }, Vector2( 1, 3 ):{ "export":true }, Vector2( 1, 4 ):{ "export":true }, Vector2( 1, 5 ):{ "export":true }, Vector2( 1, 6 ):{ "export":true }, Vector2( 1, 7 ):{ "export":true }, Vector2( 1, 8 ):{ "export":true }, Vector2( 1, 9 ):{ "export":true }, Vector2( 2, 0 ):{ "export":true }, Vector2( 2, 1 ):{ "export":true }, Vector2( 2, 2 ):{ "export":true }, Vector2( 2, 3 ):{ "export":true }, Vector2( 2, 4 ):{ "export":true }, Vector2( 2, 5 ):{ "export":true }, Vector2( 2, 6 ):{ "export":true }, Vector2( 2, 7 ):{ "export":true }, Vector2( 2, 8 ):{ "export":true }, Vector2( 2, 9 ):{ "export":true }, Vector2( 3, 0 ):{ "export":true }, Vector2( 3, 1 ):{ "export":true }, Vector2( 3, 2 ):{ "export":true }, Vector2( 3, 3 ):{ "export":true }, Vector2( 3, 4 ):{ "export":true }, Vector2( 3, 5 ):{ "export":true }, Vector2( 3, 6 ):{ "export":true }, Vector2( 3, 7 ):{ "export":true }, Vector2( 3, 8 ):{ "export":true }, Vector2( 3, 9 ):{ "export":true }, Vector2( 4, 0 ):{ "export":true }, Vector2( 4, 1 ):{ "export":true }, Vector2( 4, 2 ):{ "export":true }, Vector2( 4, 3 ):{ "export":true }, Vector2( 4, 4 ):{ "export":true }, Vector2( 4, 5 ):{ "export":true }, Vector2( 4, 6 ):{ "export":true }, Vector2( 4, 7 ):{ "export":true }, Vector2( 4, 8 ):{ "export":true }, Vector2( 4, 9 ):{ "export":false }, Vector2( 5, 0 ):{ "export":true }, Vector2( 5, 1 ):{ "export":true }, Vector2( 5, 2 ):{ "export":true }, Vector2( 5, 3 ):{ "export":true }, Vector2( 5, 4 ):{ "export":true }, Vector2( 5, 5 ):{ "export":true }, Vector2( 5, 6 ):{ "export":true }, Vector2( 5, 7 ):{ "export":true }, Vector2( 5, 8 ):{ "export":true }, Vector2( 5, 9 ):{ "export":false }, Vector2( 5, 10 ):{ "export":false }, Vector2( 6, 0 ):{ "export":true }, Vector2( 6, 1 ):{ "export":true }, Vector2( 6, 2 ):{ "export":true }, Vector2( 6, 3 ):{ "export":true }, Vector2( 6, 4 ):{ "export":true }, Vector2( 6, 5 ):{ "export":true }, Vector2( 6, 6 ):{ "export":true }, Vector2( 6, 7 ):{ "export":true }, Vector2( 6, 8 ):{ "export":true }, Vector2( 6, 9 ):{ "export":false }, Vector2( 6, 10 ):{ "export":false }, Vector2( 7, 0 ):{ "export":true }, Vector2( 7, 1 ):{ "export":true }, Vector2( 7, 2 ):{ "export":true }, Vector2( 7, 3 ):{ "export":true }, Vector2( 7, 4 ):{ "export":true }, Vector2( 7, 5 ):{ "export":true }, Vector2( 7, 6 ):{ "export":true }, Vector2( 7, 7 ):{ "export":true }, Vector2( 7, 8 ):{ "export":true }, Vector2( 7, 9 ):{ "export":false }, Vector2( 7, 10 ):{ "export":false }, Vector2( 8, 0 ):{ "export":true }, Vector2( 8, 1 ):{ "export":true }, Vector2( 8, 2 ):{ "export":true }, Vector2( 8, 3 ):{ "export":true }, Vector2( 8, 4 ):{ "export":true }, Vector2( 8, 5 ):{ "export":true }, Vector2( 8, 6 ):{ "export":true }, Vector2( 8, 7 ):{ "export":true }, Vector2( 8, 8 ):{ "export":true }, Vector2( 8, 9 ):{ "export":false }, Vector2( 8, 10 ):{ "export":false }, Vector2( 9, 0 ):{ "export":true }, Vector2( 9, 1 ):{ "export":true }, Vector2( 9, 2 ):{ "export":true }, Vector2( 9, 3 ):{ "export":true }, Vector2( 9, 4 ):{ "export":true }, Vector2( 9, 5 ):{ "export":true }, Vector2( 9, 6 ):{ "export":true }, Vector2( 9, 7 ):{ "export":true }, Vector2( 9, 8 ):{ "export":true }, Vector2( 9, 9 ):{ "export":false }, Vector2( 9, 10 ):{ "export":false }, Vector2( 10, 0 ):{ "export":true }, Vector2( 10, 1 ):{ "export":true }, Vector2( 10, 2 ):{ "export":true }, Vector2( 10, 3 ):{ "export":true }, Vector2( 10, 4 ):{ "export":true }, Vector2( 10, 5 ):{ "export":true }, Vector2( 10, 6 ):{ "export":true }, Vector2( 10, 7 ):{ "export":true }, Vector2( 10, 8 ):{ "export":true }, Vector2( 10, 9 ):{ "export":false }, Vector2( 10, 10 ):{ "export":false }, Vector2( 10, 11 ):{ "export":false }, Vector2( 11, 0 ):{ "export":true }, Vector2( 11, 1 ):{ "export":true }, Vector2( 11, 2 ):{ "export":true }, Vector2( 11, 3 ):{ "export":true }, Vector2( 11, 4 ):{ "export":true }, Vector2( 11, 5 ):{ "export":true }, Vector2( 11, 6 ):{ "export":true }, Vector2( 11, 7 ):{ "export":true }, Vector2( 11, 8 ):{ "export":true }, Vector2( 11, 9 ):{ "export":false }, Vector2( 11, 10 ):{ "export":false }, Vector2( 11, 11 ):{ "export":false }, Vector2( 12, 0 ):{ "export":true }, Vector2( 12, 1 ):{ "export":true }, Vector2( 12, 2 ):{ "export":true }, Vector2( 12, 3 ):{ "export":true }, Vector2( 12, 4 ):{ "export":true }, Vector2( 12, 5 ):{ "export":true }, Vector2( 12, 6 ):{ "export":true }, Vector2( 12, 7 ):{ "export":true }, Vector2( 12, 8 ):{ "export":true }, Vector2( 12, 9 ):{ "export":true }, Vector2( 12, 10 ):{ "export":true }, Vector2( 12, 11 ):{ "export":true }, Vector2( 13, 0 ):{ "export":true }, Vector2( 13, 1 ):{ "export":true }, Vector2( 13, 2 ):{ "export":true }, Vector2( 13, 3 ):{ "export":true }, Vector2( 13, 4 ):{ "export":true }, Vector2( 13, 5 ):{ "export":true }, Vector2( 13, 6 ):{ "export":true }, Vector2( 13, 7 ):{ "export":true }, Vector2( 13, 8 ):{ "export":true }, Vector2( 13, 9 ):{ "export":true }, Vector2( 13, 10 ):{ "export":true }, Vector2( 13, 11 ):{ "export":true }, Vector2( 14, 0 ):{ "export":true }, Vector2( 14, 1 ):{ "export":true }, Vector2( 14, 2 ):{ "export":true }, Vector2( 14, 3 ):{ "export":true }, Vector2( 14, 4 ):{ "export":true }, Vector2( 14, 5 ):{ "export":true }, Vector2( 14, 6 ):{ "export":true }, Vector2( 14, 7 ):{ "export":true }, Vector2( 14, 8 ):{ "export":true }, Vector2( 14, 9 ):{ "export":true }, Vector2( 14, 10 ):{ "export":true }, Vector2( 14, 11 ):{ "export":true }, Vector2( 15, 0 ):{ "export":true } }
+texture_2/texture = ExtResource( 4 )
+texture_2/x_off = 597.0
+texture_2/y_off = 317.0
+texture_2/w = 64.0
+texture_2/h = 64.0
+texture_2/x_sep = 2.0
+texture_2/y_sep = 2.0
+texture_2/collisions_cache = [  ]
+texture_2/occluder_cache = [  ]
+texture_2/navpoly_cache = [  ]
+texture_2/data = { Vector2( 0, 0 ):{ "export":true }, Vector2( 0, 1 ):{ "export":true }, Vector2( 1, 0 ):{ "export":true }, Vector2( 1, 1 ):{ "export":true }, Vector2( 2, 0 ):{ "export":true }, Vector2( 2, 1 ):{ "export":true }, Vector2( 3, 0 ):{ "export":true }, Vector2( 3, 1 ):{ "export":true }, Vector2( 4, 0 ):{ "export":true } }
 
